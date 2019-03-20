@@ -37,7 +37,7 @@ function createTweetElement(tweet) {
 function renderTweets(tweets) {
   for (tweet of tweets) {
     let render = createTweetElement(tweet);
-    $('.container').prepend(render);
+    $('.tweet-list').prepend(render);
   }
 }
 
@@ -56,10 +56,8 @@ $(document).ready(function() {
   $(".new-tweet form").submit(function(a) {
     a.preventDefault();
     if ($("textarea").val() === "") {
-      console.log("Empty");
       alert("Tweet is empty. Please try again.");
     } else if ($("textarea").val().length > 140) {
-      console.log("Too long");
       alert("Tweet exceeds 140 characters. Please try again.");
     } else {
       $.ajax({
