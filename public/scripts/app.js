@@ -89,5 +89,14 @@ function createTweetElement(tweet) {
   return $tweet;
 };
 
-// Call render tweets function based on user database
-renderTweets(data);
+$(document).ready(function() {
+
+  // POST tweets
+  $.post("/tweets", $(this).serialize(), function(event) {
+    console.log("It works!");
+  });
+
+  // Call render tweets function based on user database
+  renderTweets(data);
+
+});
