@@ -4,14 +4,6 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-// Render tweet function
-function renderTweets(tweets) {
-  for (tweet of tweets) {
-    let render = createTweetElement(tweet);
-    $('.container').append(render);
-  }
-}
-
 // Create tweet function
 function createTweetElement(tweet) {
   let $tweet = $('<article>').addClass('post-tweet');
@@ -37,9 +29,17 @@ function createTweetElement(tweet) {
         <img class="love" src="./images/love.png">
       </footer>
     `
-  $tweet.append(content);
+  $tweet.prepend(content);
   return $tweet;
 };
+
+// Render tweet function
+function renderTweets(tweets) {
+  for (tweet of tweets) {
+    let render = createTweetElement(tweet);
+    $('.container').prepend(render);
+  }
+}
 
 $(document).ready(function() {
 
@@ -52,18 +52,26 @@ $(document).ready(function() {
     });
   };
 
-  // Call AJAX to render tweets
+  // Check for tweet input from user
   $(".new-tweet form").submit(function(a) {
     a.preventDefault();
-    $.ajax({
-      url: $(this).attr("action"),
-      method: 'POST',
-      data: $(this).serialize()
-    })
-      .then(function(tweets) {
-        loadTweets();
-        console.log("It works");
-    });
+    if ($("textarea").val() === "") {
+      console.log("Empty");
+      alert("Tweet is empty. Please try again.");
+    } else if ($("textarea").val().length > 140) {
+      console.log("Too long");
+      alert("Tweet exceeds 140 characters. Please try again.");
+    } else {
+      $.ajax({
+        url: $(this).attr("action"),
+        method: 'POST',
+        data: $(this).serialize()
+      })
+        .then(function(tweets) {
+          loadTweets();
+          console.log("It works");
+      });
+    }
   });
 
 });
