@@ -23,3 +23,68 @@
 .over {
   color: red;
 }
+
+.post-tweet {
+  margin-top: 10px;
+}
+
+.post-tweet:hover {
+  background-color: #F8F8F8;
+  opacity: 0.5;
+}
+
+.post-tweet header {
+  height: 50px;
+  border-top: 1px solid gray;
+  border-left: 1px solid gray;
+  border-right: 1px solid gray;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background-color: #eee;
+}
+
+.post-tweet header img {
+  border-radius: 4px;
+  background-color: #00a087;
+  margin: 5px;
+  padding: 2px;
+  width: 40px;
+  height: 40px;
+  float: left;
+}
+
+.post-tweet header .name {
+  font-size: 16px;
+  font-weight: bold;
+  margin-left: 10px;
+  float: left;
+}
+
+.post-tweet header .userName {
+  float: right;
+  font-size: 12px;
+  padding-right: 10px;
+}
+
+.post-tweet .content {
+  border-left: 1px solid gray;
+  border-right: 1px solid gray;
+  padding: 20px 10px;
+  margin: 0px;
+}
+
+.post-tweet footer {
+  height: 25px;
+  border-left: 1px solid gray;
+  border-right: 1px solid gray;
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.post-tweet footer .days {
+  margin: 5px;
+  padding: 0px;
+  font-size: 10px;
+}
