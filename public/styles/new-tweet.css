@@ -1,3 +1,4 @@
+/* New tweet container */
 .container .new-tweet {
   border: 1px solid gray;
   border-radius: 5px;
@@ -5,34 +6,41 @@
   padding: 10px;
 }
 
+/* New tweet container title */
 .container .new-tweet h2 {
   border-bottom: 1px solid black;
   margin: 0px;
 }
 
+/* New tweet container text area */
 .container .new-tweet form textarea {
   width: 100%;
   padding: 5px;
   margin-top: 10px;
 }
 
+/* New tweet container character counter */
 .container .new-tweet form .counter {
   float: right;
 }
 
+/* New tweet container over character count indicator */
 .over {
   color: red;
 }
 
+/* Post tweet container */
 .post-tweet {
   margin-top: 10px;
 }
 
+/* Post tweet container hover */
 .post-tweet:hover {
   background-color: #F8F8F8;
   opacity: 0.5;
 }
 
+/* Post tweet container header */
 .post-tweet header {
   height: 50px;
   border-top: 1px solid gray;
@@ -43,7 +51,8 @@
   background-color: #eee;
 }
 
-.post-tweet header img {
+/* Post tweet container header image */
+.post-tweet header .bird {
   border-radius: 4px;
   background-color: #00a087;
   margin: 5px;
@@ -53,19 +62,22 @@
   float: left;
 }
 
+/* Post tweet container header name */
 .post-tweet header .name {
-  font-size: 16px;
+  font-size: 1em;
   font-weight: bold;
   margin-left: 10px;
   float: left;
 }
 
+/* Post tweet container header user name */
 .post-tweet header .userName {
-  float: right;
   font-size: 12px;
   padding-right: 10px;
+  float: right;
 }
 
+/* Post tweet container content */
 .post-tweet .content {
   border-left: 1px solid gray;
   border-right: 1px solid gray;
@@ -73,7 +85,9 @@
   margin: 0px;
 }
 
+/* Post tweet container footer */
 .post-tweet footer {
+  display: flex;
   height: 25px;
   border-left: 1px solid gray;
   border-right: 1px solid gray;
@@ -81,10 +95,33 @@
   border-bottom: 1px solid gray;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
+  padding: 5px;
 }
 
+/* Post tweet container footer days */
 .post-tweet footer .days {
-  margin: 5px;
-  padding: 0px;
   font-size: 10px;
+  padding: 0px;
+  margin: 5px;
+}
+
+/* Post tweet container footer flag */
+.post-tweet footer .flag {
+  width: 16px;
+  height: 16px;
+  padding: 2px;
+}
+
+/* Post tweet container footer flag */
+.post-tweet footer .re-tweet {
+  width: 16px;
+  height: 16px;
+  padding: 2px;
+}
+
+/* Post tweet container footer love */
+.post-tweet footer .love {
+  width: 16px;
+  height: 16px;
+  padding: 2px;
 }
