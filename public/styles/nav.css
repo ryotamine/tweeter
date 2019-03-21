@@ -18,7 +18,7 @@
   line-height: 80px;
 }
 
-#nav-bar .compose {
+#nav-bar #compose {
   border: 1px solid black;
   border-radius: 8px;
   background-color: #D1F2EB;
@@ -27,7 +27,7 @@
   padding: 0px 15px;
 }
 
-#nav-bar .compose:hover {
+#nav-bar #compose:hover {
   background-color: white;
   color: black;
 }
