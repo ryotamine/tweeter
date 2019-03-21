@@ -59,12 +59,18 @@ $(document).ready(function() {
   };
 
   // Check for tweet input from user
-  $(".new-tweet form").submit(function(a) {
-    a.preventDefault();
+  $(".new-tweet form").submit(function(tweetForm) {
+    tweetForm.preventDefault();
     if ($("textarea").val() === "") {
-      alert("Tweet is empty. Please try again.");
+      $(".none").animate({
+        height: "toggle"
+      });
+      $(".exceed").hide();
     } else if ($("textarea").val().length > 140) {
-      alert("Tweet exceeds 140 characters. Please try again.");
+      $(".exceed").animate({
+        height: "toggle"
+      });
+      $(".none").hide();
     } else {
       $.ajax({
         url: $(this).attr("action"),
@@ -72,6 +78,8 @@ $(document).ready(function() {
         data: $(this).serialize()
       })
         .then(function(tweets) {
+          $(".none").hide();
+          $(".exceed").hide();
           loadTweets();
           $("textarea").val("").focus();
       });

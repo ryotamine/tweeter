@@ -1,3 +1,4 @@
+/* Navigation bar */
 #nav-bar {
   display: flex;
   width: 100%;
@@ -7,18 +8,21 @@
   padding: 0px 2em;
 }
 
+/* Navigation logo */
 #nav-bar .logo {
   width: 80px;
   height: 80px;
 }
 
+/* Navigation header */
 #nav-bar .header {
-  margin-left: 10px;
   font-size: 2em;
   line-height: 80px;
+  margin-left: 10px;
 }
 
-#nav-bar #compose {
+/* Compose button */
+#compose {
   border: 1px solid black;
   border-radius: 8px;
   background-color: #D1F2EB;
@@ -27,7 +31,8 @@
   padding: 0px 15px;
 }
 
-#nav-bar #compose:hover {
+/* Compose button hover effect */
+#compose:hover {
   background-color: white;
   color: black;
 }

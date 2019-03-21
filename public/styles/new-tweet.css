@@ -29,6 +29,17 @@
   color: red;
 }
 
+/* Hide empty character message initially */
+.none {
+  display: none;
+}
+
+/* Hide exceeds 140 characters message initially */
+.exceed {
+  display: none;
+  color: red;
+}
+
 /* Post tweet container */
 .post-tweet {
   margin-top: 10px;
@@ -70,7 +81,7 @@
   float: left;
 }
 
-/* Post tweet container header user name */
+/* Post tweet container header username */
 .post-tweet header .userName {
   font-size: 12px;
   padding-right: 10px;
@@ -105,21 +116,21 @@
   margin: 5px;
 }
 
-/* Post tweet container footer flag */
+/* Post tweet container footer flag icon */
 .post-tweet footer .flag {
   width: 16px;
   height: 16px;
   padding: 2px;
 }
 
-/* Post tweet container footer flag */
+/* Post tweet container footer re-tweet icon */
 .post-tweet footer .re-tweet {
   width: 16px;
   height: 16px;
   padding: 2px;
 }
 
-/* Post tweet container footer love */
+/* Post tweet container footer love icon */
 .post-tweet footer .love {
   width: 16px;
   height: 16px;
