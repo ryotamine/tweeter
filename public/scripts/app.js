@@ -73,6 +73,7 @@ $(document).ready(function() {
       })
         .then(function(tweets) {
           loadTweets();
+          $("textarea").val("").focus();
       });
     }
   });
