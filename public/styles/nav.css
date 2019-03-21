@@ -17,3 +17,16 @@
   font-size: 2em;
   line-height: 80px;
 }
+
+#nav-bar .compose {
+  border: 1px solid black;
+  border-radius: 8px;
+  background-color: #D1F2EB;
+  color: #00a087;
+  margin: 10px 0px;
+}
+
+#nav-bar .compose:hover {
+  background-color: white;
+  color: black;
+}

@@ -35,6 +35,7 @@ function createTweetElement(tweet) {
 
 // Render tweet function
 function renderTweets(tweets) {
+  $('.tweet-list').empty();
   for (tweet of tweets) {
     let render = createTweetElement(tweet);
     $('.tweet-list').prepend(render);
@@ -67,7 +68,6 @@ $(document).ready(function() {
       })
         .then(function(tweets) {
           loadTweets();
-          console.log("It works");
       });
     }
   });
