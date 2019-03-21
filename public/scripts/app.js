@@ -44,6 +44,11 @@ function renderTweets(tweets) {
 
 $(document).ready(function() {
 
+  // Compose tweet slide toggle function
+  $("#compose").click(function() {
+    $(".new-tweet").slideToggle();
+  });
+
   // Load tweets function
   function loadTweets() {
     $.ajax("/tweets")
