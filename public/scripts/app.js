@@ -6,7 +6,7 @@
 
 // Create tweet function
 function createTweetElement(tweet) {
-  let $tweet = $('<article>').addClass('post-tweet');
+  let $tweet = $("<article>").addClass("post-tweet");
 
   let avatars = tweet.user.avatars.small;
   let name = tweet.user.name;
@@ -35,10 +35,10 @@ function createTweetElement(tweet) {
 
 // Render tweet function
 function renderTweets(tweets) {
-  $('.tweet-list').empty();
+  $(".tweet-list").empty();
   for (tweet of tweets) {
     let render = createTweetElement(tweet);
-    $('.tweet-list').prepend(render);
+    $(".tweet-list").prepend(render);
   }
 }
 
@@ -53,7 +53,6 @@ $(document).ready(function() {
   function loadTweets() {
     $.ajax("/tweets")
     .then(function(tweets) {
-      console.log(tweets);
       renderTweets(tweets);
     });
   };
@@ -74,7 +73,7 @@ $(document).ready(function() {
     } else {
       $.ajax({
         url: $(this).attr("action"),
-        method: 'POST',
+        method: "POST",
         data: $(this).serialize()
       })
         .then(function(tweets) {
