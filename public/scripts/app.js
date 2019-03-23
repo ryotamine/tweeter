@@ -13,7 +13,7 @@ function createTweetElement(tweet) {
   let name = tweet.user.name;
   let handle = tweet.user.handle;
   let text = escape(tweet.content.text);
-  let createdAt = Date(tweet.created_at);
+  let createdAt = new Date(tweet.created_at);
 
   let content =
     `
