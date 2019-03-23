@@ -1,9 +1,9 @@
 // Cross-site scripting prevention function
 function escape(str) {
-  var div = document.createElement('div');
+  var div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
-}
+};
 
 // Create tweet function
 function createTweetElement(tweet) {
@@ -18,20 +18,20 @@ function createTweetElement(tweet) {
   let content =
     `
       <article class="post-tweet">
-      <header>
-        <img class="bird" src="${avatars}">
-        <p class="name">${name}</p>
-        <p class="userName">${handle}</p>
-      </header>
-        <p class="content">${text}</p>
-      <footer>
-        <p class="days">${createdAt}</p>
-        <div class="icons">
-          <i class="fas fa-heart"></i>
-          <i class="fas fa-retweet"></i>
-          <i class="fas fa-flag"></i>
-        </div>
-      </footer>
+        <header>
+          <img class="bird" src="${avatars}">
+          <p class="name">${name}</p>
+          <p class="userName">${handle}</p>
+        </header>
+          <p class="content">${text}</p>
+        <footer>
+          <p class="days">${createdAt}</p>
+          <div class="icons">
+            <i class="fas fa-heart"></i>
+            <i class="fas fa-retweet"></i>
+            <i class="fas fa-flag"></i>
+          </div>
+        </footer>
       </article>
     `
   $tweet.prepend(content);
