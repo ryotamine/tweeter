@@ -1,6 +1,6 @@
 "use strict";
 
-// Basic express setup
+// Basic Express setup
 const PORT = 8080;
 const express = require("express");
 const bodyParser = require("body-parser");

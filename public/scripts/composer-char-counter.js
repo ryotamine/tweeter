@@ -2,11 +2,12 @@ $(document).ready(function() {
 
   // Character countdown function
   $("textarea").on("input", function() {
+    let startCount = 140;
     let tweetLength = $(this).val().length;
-    let tweetCount = 140 - tweetLength;
+    let tweetCount = startCount - tweetLength;
     let count = $(".counter");
 
-    if (tweetCount > 0) {
+    if (tweetCount >= 0) {
       count.removeClass("over");
       count.text(tweetCount);
     } else {

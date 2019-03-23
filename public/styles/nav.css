@@ -1,8 +1,8 @@
 /* Navigation bar */
 #nav-bar {
   display: flex;
-  width: 100%;
   height: 80px;
+  width: 100%;
   background-color: #00a087;
   color: #e8fdff;
   padding: 0px 2em;
@@ -16,23 +16,28 @@
 
 /* Navigation header */
 #nav-bar .header {
+  padding-left: 10px;
   font-size: 2em;
   line-height: 80px;
-  margin-left: 10px;
 }
 
 /* Compose button */
 #compose {
   border: 1px solid black;
   border-radius: 8px;
-  background-color: #D1F2EB;
+  background-color: #d1f2eb;
   color: #00a087;
+  width: 120px;
+  height: 60px;
   margin: 10px 0px;
   padding: 0px 15px;
+  position: absolute;
+  right: 2em;
 }
 
 /* Compose button hover effect */
 #compose:hover {
+  cursor: pointer;
   background-color: white;
   color: black;
 }

@@ -1,8 +1,9 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
+// Cross-site scripting prevention function
+function escape(str) {
+  var div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+}
 
 // Create tweet function
 function createTweetElement(tweet) {
@@ -11,11 +12,12 @@ function createTweetElement(tweet) {
   let avatars = tweet.user.avatars.small;
   let name = tweet.user.name;
   let handle = tweet.user.handle;
-  let text = tweet.content.text;
-  let createdAt = tweet.created_at;
+  let text = escape(tweet.content.text);
+  let createdAt = Date(tweet.created_at);
 
   let content =
     `
+      <article class="post-tweet">
       <header>
         <img class="bird" src="${avatars}">
         <p class="name">${name}</p>
@@ -24,10 +26,13 @@ function createTweetElement(tweet) {
         <p class="content">${text}</p>
       <footer>
         <p class="days">${createdAt}</p>
-        <img class="flag" src="./images/flag.png">
-        <img class="re-tweet" src="./images/re-tweet.png">
-        <img class="love" src="./images/love.png">
+        <div class="icons">
+          <i class="fas fa-heart"></i>
+          <i class="fas fa-retweet"></i>
+          <i class="fas fa-flag"></i>
+        </div>
       </footer>
+      </article>
     `
   $tweet.prepend(content);
   return $tweet;
@@ -40,7 +45,7 @@ function renderTweets(tweets) {
     let render = createTweetElement(tweet);
     $(".tweet-list").prepend(render);
   }
-}
+};
 
 $(document).ready(function() {
 
@@ -52,8 +57,8 @@ $(document).ready(function() {
   // Load tweets function
   function loadTweets() {
     $.ajax("/tweets")
-    .then(function(tweets) {
-      renderTweets(tweets);
+      .then(function(tweets) {
+        renderTweets(tweets);
     });
   };
 
@@ -80,9 +85,13 @@ $(document).ready(function() {
           $(".none").hide();
           $(".exceed").hide();
           loadTweets();
+          $(".counter").text(140);
           $("textarea").val("").focus();
       });
     }
   });
+
+  // Load existing tweets
+  loadTweets();
 
 });

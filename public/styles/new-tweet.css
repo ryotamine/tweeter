@@ -1,6 +1,7 @@
 /* New tweet container */
 .container .new-tweet {
-  border: 1px solid gray;
+  display: none;
+  border: 1px solid #d9d9d9;
   border-radius: 5px;
   background-color: #eee;
   padding: 10px;
@@ -9,19 +10,20 @@
 /* New tweet container title */
 .container .new-tweet h2 {
   border-bottom: 1px solid black;
-  margin: 0px;
+  margin-top: 0px;
 }
 
 /* New tweet container text area */
 .container .new-tweet form textarea {
   width: 100%;
   padding: 5px;
-  margin-top: 10px;
 }
 
 /* New tweet container character counter */
 .container .new-tweet form .counter {
   float: right;
+  font-size: 12px;
+  padding: 5px;
 }
 
 /* New tweet container over character count indicator */
@@ -43,20 +45,26 @@
 /* Post tweet container */
 .post-tweet {
   margin-top: 10px;
+  opacity: 0.5;
 }
 
 /* Post tweet container hover */
 .post-tweet:hover {
-  background-color: #F8F8F8;
-  opacity: 0.5;
+  background-color: #f8f8f8;
+  opacity: 1;
+}
+
+/* Post tweet container hover for flag, re-tweet, and like */
+.post-tweet:hover i {
+  opacity: 1;
 }
 
 /* Post tweet container header */
 .post-tweet header {
   height: 50px;
-  border-top: 1px solid gray;
-  border-left: 1px solid gray;
-  border-right: 1px solid gray;
+  border-top: 1px solid #d9d9d9;
+  border-left: 1px solid #d9d9d9;
+  border-right: 1px solid #d9d9d9;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   background-color: #eee;
@@ -66,32 +74,33 @@
 .post-tweet header .bird {
   border-radius: 4px;
   background-color: #00a087;
-  margin: 5px;
-  padding: 2px;
   width: 40px;
   height: 40px;
+  margin: 5px;
+  padding: 2px;
   float: left;
 }
 
 /* Post tweet container header name */
 .post-tweet header .name {
-  font-size: 1em;
+  font-size: 18px;
   font-weight: bold;
-  margin-left: 10px;
+  margin-top: 5px;
   float: left;
 }
 
 /* Post tweet container header username */
 .post-tweet header .userName {
   font-size: 12px;
-  padding-right: 10px;
+  margin: 8px 5px;
   float: right;
 }
 
 /* Post tweet container content */
 .post-tweet .content {
-  border-left: 1px solid gray;
-  border-right: 1px solid gray;
+  border-left: 1px solid #d9d9d9;
+  border-right: 1px solid #d9d9d9;
+  word-wrap: break-word;
   padding: 20px 10px;
   margin: 0px;
 }
@@ -99,40 +108,23 @@
 /* Post tweet container footer */
 .post-tweet footer {
   display: flex;
+  justify-content: space-between;
   height: 25px;
-  border-left: 1px solid gray;
-  border-right: 1px solid gray;
-  border-top: 1px solid gray;
-  border-bottom: 1px solid gray;
+  border: 1px solid #d9d9d9;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
-  padding: 5px;
 }
 
 /* Post tweet container footer days */
 .post-tweet footer .days {
   font-size: 10px;
-  padding: 0px;
   margin: 5px;
 }
 
-/* Post tweet container footer flag icon */
-.post-tweet footer .flag {
-  width: 16px;
-  height: 16px;
-  padding: 2px;
-}
-
-/* Post tweet container footer re-tweet icon */
-.post-tweet footer .re-tweet {
-  width: 16px;
-  height: 16px;
-  padding: 2px;
-}
-
-/* Post tweet container footer love icon */
-.post-tweet footer .love {
-  width: 16px;
-  height: 16px;
-  padding: 2px;
+/* Post tweet container footer icons (flag, re-tweet, and like) */
+.post-tweet footer i {
+  color: #00a087;
+  opacity: 0;
+  margin: 3px;
+  float: right;
 }

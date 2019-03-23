@@ -1,4 +1,4 @@
-# Tweeter Project
+# Tweeter Project by Ryota Mine
 
 Tweeter is a simple, single-page Twitter clone.
 
